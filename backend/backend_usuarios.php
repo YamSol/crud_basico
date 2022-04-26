@@ -158,7 +158,7 @@ $_->execute();
 
                 <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
 
-                <h2>Manutenção de Usuários <button class="btn btn-success">Cadastrar usuarios</button></h2>
+                <h2>Manutenção de Usuários <a class="btn btn-success" href="cadastrar_usuarios.php">Cadastrar usuarios</a></h2>
 
                 <div class="table-responsive">
                     <table class="table table-striped">
