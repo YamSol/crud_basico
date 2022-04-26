@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+main {
+    background-color: rgba(92, 194, 89, 0.8);
+    border-radius: 20px;
+    background-image: url("image/fundo.jpg");
+}
+
+body {
+    background-image: url("image/fundo.png") no-repeat;
+}
+
+h1 {
+    font-family: 'Roboto Slab', serif;
+}
