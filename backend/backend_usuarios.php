@@ -181,7 +181,11 @@ $_->execute();
                                     <td> <?php echo utf8_encode($usuario['nome'])?> </td>
                                     <td> <?php echo utf8_encode($usuario['cpf'])?> </td>
                                     <td> <?php echo utf8_encode($usuario['senha'])?> </td>
-                                    <td><button type="button" class="btn btn-warning btn-sm">Editar</button></td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning btn-sm">
+                                        <a style="text-decoration: none; color: black;" href="./editar_cadastro.php?id_usuario=<?php echo $usuario["id"]; ?>&classificacao=usuario">Editar</a>
+                                        </button>
+                                    </td>
                                     <td>
                                         <button type="button" class="btn btn-danger btn-sm">
                                             <a style="text-decoration: none; color: white;" href="./excluir_cadastro.php?id_usuario=<?php echo $usuario["id"]; ?>&classificacao=usuario">Excluir</a>
