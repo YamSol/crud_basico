@@ -10,14 +10,14 @@
 
 <body>
     <h1>Cadastro de Usuários</h1>
-    <form action="proc_cadastrar" method="post">
+    <form action="processa_usuario.php" method="POST">
         <!-- login -->
-        <label for="login">Login:</label>
-        <input type="text" name="login" id="id_login">
+        <label for="login">Nome:</label>
+        <input type="text" name="nome" id="id_nome">
 
         <!-- cpf -->
         <label for="cpf">CPF:</label>
-        <input type="number" name="cpf" id="id_cpf">
+        <input type="text" id="id_cpf" name="cpf" \ pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" \ placeholder="Sem pontos e traços"/>
 
         <!-- senha -->
         <label for="senha">Senha:</label>
