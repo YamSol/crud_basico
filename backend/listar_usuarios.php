@@ -18,11 +18,11 @@ $_->execute();
     <title>Listar usuarios</title>
 
     <style>
-    button{
-        width:100%;
-        height: 40px;
-        background-color: gray;
-    }
+        button {
+            width: 100%;
+            height: 40px;
+            background-color: gray;
+        }
     </style>
 
 </head>
@@ -42,17 +42,16 @@ $_->execute();
             </tr>
         <tbody>
             <?php
-            while ($usuario = $_->fetch(PDO::FETCH_ASSOC)) {
-                echo ' <tr>';
-                echo ' <td>'.$usuario['id'].'</td>';
-                echo ' <td>'.$usuario['nome'].'</td>';
-                echo ' <td>'.$usuario['cpf'].'</td>';
-                echo ' <td>'.$usuario['senha'].'</td>';
-                echo ' <td style="text-align: center"><button>Editar</button></td>';
-                echo ' <td style="text-align: center"><button>Excluir</button></td>';
-                echo ' </tr>';
-            };
-            ?>
+            while ($usuario = $_->fetch(PDO::FETCH_ASSOC)) { ?>
+                <tr>
+                    <td><?php echo $usuario['id'] ?></td>
+                    <td><?php echo $usuario['nome'] ?></td>
+                    <td><?php echo $usuario['cpf'] ?></td>
+                    <td><?php echo $usuario['senha'] ?></td>
+                    <td style="text-align: center"><button>Editar</button></td>
+                        <a style="text-decoration: none; color: white;" href="./excluir_cadastro.php?id_usuario=<?php echo $usuario["id"]; ?>&classificacao=usuario">Excluir</a>
+                </tr>
+            <?php }; ?>
 
         </tbody>
         </thead>
