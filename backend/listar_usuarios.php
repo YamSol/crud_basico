@@ -49,7 +49,7 @@ $_->execute();
                     <td><?php echo $usuario['cpf'] ?></td>
                     <td><?php echo $usuario['senha'] ?></td>
                     <td style="text-align: center"><button>Editar</button></td>
-                        <a style="text-decoration: none; color: white;" href="./excluir_cadastro.php?id_usuario=<?php echo $usuario["id"]; ?>&classificacao=usuario">Excluir</a>
+                    <td><button href="./excluir_cadastro.php?id_usuario=<?php echo $usuario["id"]; ?>&classificacao=usuario">Excluir</button></td>
                 </tr>
             <?php }; ?>
 
