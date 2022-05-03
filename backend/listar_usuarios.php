@@ -48,8 +48,8 @@ $_->execute();
                     <td><?php echo $usuario['nome'] ?></td>
                     <td><?php echo $usuario['cpf'] ?></td>
                     <td><?php echo $usuario['senha'] ?></td>
-                    <td style="text-align: center"><button>Editar</button></td>
-                    <td><button href="./excluir_cadastro.php?id_usuario=<?php echo $usuario["id"]; ?>&classificacao=usuario">Excluir</button></td>
+                    <td style="text-align: center; font-size: 18px; background: rgb(200,180,80);"><a href="editar_usuario.php?id_usuario=<?php echo $usuario["id"]; ?>&classificacao=usuario&file=listar">Editar</a></td>
+                    <td style="text-align: center; font-size: 18px; background: rgb(200,180,80);"><a href="excluir_cadastro.php?id_usuario=<?php echo $usuario["id"]; ?>&classificacao=usuario&file=listar">Excluir</a></td>
                 </tr>
             <?php }; ?>
 
