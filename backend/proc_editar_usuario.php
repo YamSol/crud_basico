@@ -12,8 +12,8 @@ $sql = "UPDATE usuarios SET `nome`=:nome, `cpf` =:cpf, `senha`=:senha,
 `modified`=NOW() WHERE id=:id";
 $comando = $conn->prepare($sql);
 $comando->bindParam(":id",$id_usuario);
-$comando->bindParam(":nome",$nome);
-$comando->bindParam(":senha",$senha);
+$comando->bindParam(":nome",utf8_decode($nome));
+$comando->bindParam(":senha",utf8_decode($senha));
 $comando->bindParam(":cpf",$cpf);
 $comando->execute();
 

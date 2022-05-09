@@ -13,6 +13,7 @@ if (isset($_GET["id_usuario"])) {
 
     //passa para $id_usuario os usuarios da query
     $id_usuario = $comando->fetch();
+
 } else {
     if ($_GET["file"] == "listar") {
         header("Location: listar_usuarios.php");
