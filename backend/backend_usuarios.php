@@ -177,13 +177,13 @@ $_->execute();
                             <?php
                             while ($usuario = $_->fetch(PDO::FETCH_ASSOC)) { ?>
                                 <tr>
-                                    <td> <?php echo utf8_encode($usuario['id']) ?> </td>
-                                    <td> <?php echo utf8_encode($usuario['nome']) ?> </td>
-                                    <td> <?php echo utf8_encode($usuario['cpf']) ?> </td>
-                                    <td> <?php echo utf8_encode($usuario['senha']) ?> </td>
+                                    <td> <?php echo utf8_encode($usuario['id']); ?> </td>
+                                    <td> <?php echo utf8_encode($usuario['nome']); ?> </td>
+                                    <td> <?php echo utf8_encode($usuario['cpf']); ?> </td>
+                                    <td> <?php echo utf8_encode($usuario['senha']); ?> </td>
                                     <td>
                                         <button type="button" class="btn btn-warning btn-sm">
-                                            <a style="text-decoration: none; color: black;" href="./editar_cadastro.php?id_usuario=<?php echo $usuario["id"]; ?>&classificacao=usuario&file=backend">Editar</a>
+                                            <a style="text-decoration: none; color: black;" href="./editar_usuario.php?id_usuario=<?php echo $usuario["id"]; ?>&classificacao=usuario&file=backend">Editar</a>
                                         </button>
                                     </td>
                                     <td>
