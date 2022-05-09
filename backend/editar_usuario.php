@@ -4,56 +4,59 @@
 
 require_once "../conexao.php";
 
-if(isset($_GET["id_usuario"])){
+if (isset($_GET["id_usuario"])) {
 
-$sql = "SELECT * FROM usuarios WHERE id = :id";
-$comando = $conn -> prepare($sql);
-$comando -> bindValue(":id", $_GET["id_usuario"]);
-$comando -> execute();
+    $sql = "SELECT * FROM usuarios WHERE id = :id";
+    $comando = $conn->prepare($sql);
+    $comando->bindValue(":id", $_GET["id_usuario"]);
+    $comando->execute();
 
-$idusuario = $comando -> fetch();
-
-}else{
-
-    header("Location: listar_usuarios.php");
-
+    $id_usuario = $comando->fetch();
+} else {
+    if($_GET["file"]=="listar"){
+        header("Location: listar_usuarios.php");
+    }else if($_GET["file"]=="backend"){
+        header("Location: backend_usuarios.php");
+    }else{
+        header("Location: ../login.php");
+    }
 }
 
 ?>
-    <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="pt-br">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EDITAR - <?php echo $id_usuario["nome"]; ?></title>
+</head>
+
+<body>
 
     <body>
+        <h1 style="text-align: center;">Editar - CRUD SIMPLES</h1>
+        <div style="height: 90%; display: flex; align-items: center; justify-content: center;">
 
-        <body>
-            <div style="">
+        <form method="POST" action="proc_editar_usuario.php">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" value="<?php echo $id_usuario["nome"]; ?>" />
 
-            </div>
-            <h1>Editar - CRUD SIMPLES</h1>
-                <form method="POST" action="processa/proc editar usuario.php">
-                    <label for="nome">Nome:</label>
-                    <input type="text" name="nome" value="<?php echo $idusuario["nome"];?>"/>
+            <label for="cpf">CPF:</label>
+            <input type="text" name="cpf" value="<?php echo $id_usuario["cpf"]; ?>" />
 
-                    <label for="cpf">CPF:</label>
-                    <input type="text" name="cpf" value="<?php echo $idusuario["cpf"];?>"/>
+            <label for="senha">Senha:</label>
+            <input type="text" name="senha" value="<?php echo $id_usuario["senha"]; ?>" />
 
-                    <label for="senha">Senha:</label>
-                    <input type="text" name="senha" value="<?php echo $idusuario["senha"];?>"/>
-                    
-                    <input type="hidden" name="id usuario" value="<?php echo $idusuario["id"];?>"/>
-                    <input type="submit" value="Salvar"/>
-                </form>
-        </body>
-
-    </html>
-
+            <input type="hidden" name="id_usuario" value="<?php echo $id_usuario["id"]; ?>" />
+            <input type="submit" value="Salvar" />
+        </form>
+        </div>
     </body>
 
-    </html>
+</html>
+
+</body>
+
+</html>
