@@ -33,7 +33,6 @@ $_->execute();
     <table border="3px" width="100%">
         <thead>
             <tr>
-                <th>#ID</th>
                 <th>NOME</th>
                 <th>CPF</th>
                 <th>SENHA</th>
@@ -44,10 +43,9 @@ $_->execute();
             <?php
             while ($usuario = $_->fetch(PDO::FETCH_ASSOC)) { ?>
                 <tr>
-                    <td><?php echo $usuario['id'] ?></td>
-                    <td><?php echo $usuario['nome'] ?></td>
-                    <td><?php echo $usuario['cpf'] ?></td>
-                    <td><?php echo $usuario['senha'] ?></td>
+                    <td><?php echo utf8_encode($usuario['nome']); ?></td>
+                    <td><?php echo utf8_encode($usuario['cpf']); ?></td>
+                    <td><?php echo utf8_encode($usuario['senha']); ?></td>
                     <td style="text-align: center; font-size: 18px; background: rgb(200,180,80);"><a href="editar_usuario.php?id_usuario=<?php echo $usuario["id"]; ?>&classificacao=usuario&file=listar">Editar</a></td>
                     <td style="text-align: center; font-size: 18px; background: rgb(200,180,80);"><a href="excluir_cadastro.php?id_usuario=<?php echo $usuario["id"]; ?>&classificacao=usuario&file=listar">Excluir</a></td>
                 </tr>

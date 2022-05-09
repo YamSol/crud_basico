@@ -33,11 +33,10 @@ $_->execute();
     <table border="3px" width="100%">
         <thead>
             <tr>
-                <th>id</th>
-                <th>nome</th>
-                <th>cpf</th>
-                <th>data_nasc</th>
-                <th>endereco</th>
+                <th>NOME</th>
+                <th>CPF</th>
+                <th>DATA DE NASCIMENTO</th>
+                <th>ENDEREÇO</th>
                 <th>cep</th>
                 <th>bairro</th>
                 <th>cidade</th>
@@ -49,7 +48,6 @@ $_->execute();
             <?php
             while ($aluno = $_->fetch(PDO::FETCH_ASSOC)) { ?>
                 <tr>
-                    <td><?php echo $aluno['id']; ?></td>
                     <td><?php echo $aluno['nome']; ?></td>
                     <td><?php echo $aluno['cpf']; ?></td>
                     <td><?php echo $aluno['data_nasc']; ?></td>
@@ -64,8 +62,12 @@ $_->execute();
                 <tr>
                     <th>MODIFIED</th>
                     <th>CREATED</th>
+                    <th>EDITAR</th>
+                    <th>EXCLUIR</th>
                 </tr>
                 <tr>
+                    <td><?php echo $aluno['modified']; ?></td>
+                    <td><?php echo $aluno['created']; ?></td>
                     <td style="text-align: center; font-size: 18px; background: rgb(200,180,80);"><a href="editar_usuario.php?id_usuario=<?php echo $aluno["id"]; ?>&classificacao=usuario&file=listar">Editar</a></td>
                     <td style="text-align: center; font-size: 18px; background: rgb(200,180,80);"><a href="excluir_cadastro.php?id_usuario=<?php echo $aluno["id"]; ?>&classificacao=usuario&file=listar">Excluir</a></td>
                 </tr>
