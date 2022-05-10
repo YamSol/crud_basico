@@ -164,7 +164,6 @@ $_->execute();
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th scope="col">#id</th>
                                 <th scope="col">Nome</th>
                                 <th scope="col">CPF</th>
                                 <th scope="col">Senha</th>
@@ -177,7 +176,6 @@ $_->execute();
                             <?php
                             while ($usuario = $_->fetch(PDO::FETCH_ASSOC)) { ?>
                                 <tr>
-                                    <td> <?php echo utf8_encode($usuario['id']); ?> </td>
                                     <td> <?php echo utf8_encode($usuario['nome']); ?> </td>
                                     <td> <?php echo utf8_encode($usuario['cpf']); ?> </td>
                                     <td> <?php echo utf8_encode($usuario['senha']); ?> </td>

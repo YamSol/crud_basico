@@ -48,16 +48,16 @@ $_->execute();
             <?php
             while ($aluno = $_->fetch(PDO::FETCH_ASSOC)) { ?>
                 <tr>
-                    <td><?php echo $aluno['nome']; ?></td>
-                    <td><?php echo $aluno['cpf']; ?></td>
-                    <td><?php echo $aluno['data_nasc']; ?></td>
-                    <td><?php echo $aluno['endereco']; ?></td>
-                    <td><?php echo $aluno['cep']; ?></td>
-                    <td><?php echo $aluno['bairro']; ?></td>
-                    <td><?php echo $aluno['cidade']; ?></td>
-                    <td><?php echo $aluno['uf']; ?></td>
-                    <td><?php echo $aluno['senha']; ?></td>
-                    <td><?php echo $aluno['email']; ?></td>
+                    <td><?php echo utf8_encode($aluno['nome']); ?></td>
+                    <td><?php echo utf8_encode($aluno['cpf']); ?></td>
+                    <td><?php echo utf8_encode($aluno['data_nasc']); ?></td>
+                    <td><?php echo utf8_encode($aluno['endereco']); ?></td>
+                    <td><?php echo utf8_encode($aluno['cep']); ?></td>
+                    <td><?php echo utf8_encode($aluno['bairro']); ?></td>
+                    <td><?php echo utf8_encode($aluno['cidade']); ?></td>
+                    <td><?php echo utf8_encode($aluno['uf']); ?></td>
+                    <td><?php echo utf8_encode($aluno['senha']); ?></td>
+                    <td><?php echo utf8_encode($aluno['email']); ?></td>
                 </tr>
                 <tr>
                     <th>MODIFIED</th>
@@ -68,8 +68,8 @@ $_->execute();
                 <tr>
                     <td><?php echo $aluno['modified']; ?></td>
                     <td><?php echo $aluno['created']; ?></td>
-                    <td style="text-align: center; font-size: 18px; background: rgb(200,180,80);"><a href="editar_usuario.php?id_usuario=<?php echo $aluno["id"]; ?>&classificacao=usuario&file=listar">Editar</a></td>
-                    <td style="text-align: center; font-size: 18px; background: rgb(200,180,80);"><a href="excluir_cadastro.php?id_usuario=<?php echo $aluno["id"]; ?>&classificacao=usuario&file=listar">Excluir</a></td>
+                    <td style="text-align: center; font-size: 18px; background: rgb(200,180,80);"><a href="editar_aluno.php?id_usuario=<?php echo $aluno["id"]; ?>&classificacao=aluno&file=listar">Editar</a></td>
+                    <td style="text-align: center; font-size: 18px; background: rgb(200,180,80);"><a href="excluir_cadastro.php?id_usuario=<?php echo $aluno["id"]; ?>&classificacao=aluno&file=listar">Excluir</a></td>
                 </tr>
             <?php } ?>
 

@@ -6,7 +6,7 @@ require_once "../conexao.php";
 
 if (isset($_GET["id_usuario"])) {
 
-    $sql = "SELECT * FROM usuarios WHERE id = :id";
+    $sql = "SELECT * FROM alunos WHERE id = :id";
     $comando = $conn->prepare($sql);
     $comando->bindValue(":id", $_GET["id_usuario"]);
     $comando->execute();
@@ -43,15 +43,46 @@ if (isset($_GET["id_usuario"])) {
             <form method="POST" action="proc_editar_cadastro.php">
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome" value="<?php echo utf8_encode($id_usuario["nome"]); ?>" />
+                <br>
 
                 <label for="cpf">CPF:</label>
                 <input type="text" name="cpf" value="<?php echo $id_usuario["cpf"]; ?>" />
+                <br>
 
                 <label for="senha">Senha:</label>
                 <input type="text" name="senha" value="<?php echo utf8_encode($id_usuario["senha"]); ?>" />
+                <br>
+
+                <label for="data_nasc">Data de Nascimento:</label>
+                <input type="text" name="data_nasc" value="<?php echo utf8_encode($id_usuario["data_nasc"]); ?>" />
+                <br>
+
+                <label for="endereco">Endereço:</label>
+                <input type="text" name="endereco" value="<?php echo utf8_encode($id_usuario["endereco"]); ?>" />
+                <br>
+
+                <label for="cep">CEP:</label>
+                <input type="text" name="cep" value="<?php echo $id_usuario["cep"]; ?>" /> 
+                <br>
+
+                <label for="bairro">Bairro:</label>
+                <input type="text" name="bairro" value="<?php echo utf8_encode($id_usuario["bairro"]); ?>" />
+                <br>
+
+                <label for="cidade">Cidade:</label>
+                <input type="text" name="cidade" value="<?php echo utf8_encode($id_usuario["cidade"]); ?>" />
+                <br>
+
+                <label for="uf">UF:</label>
+                <input type="text" name="uf" value="<?php echo utf8_encode($id_usuario["uf"]); ?>" />
+                <br>
+
+                <label for="email">E-mail:</label>
+                <input type="text" name="email" value="<?php echo utf8_encode($id_usuario["email"]); ?>" />
 
                 <input type="hidden" name="id_usuario" value="<?php echo $id_usuario["id"] ?>" />
                 <input type="hidden" name="file" value="<?php echo $_GET['file']; ?>"/>
+                <input type="hidden" name="classificacao" value="<?php echo $_GET['classificacao']; ?>"/>
                 <input type="submit" value="Salvar" />
             </form>
         </div>

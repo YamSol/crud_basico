@@ -10,7 +10,7 @@
 
 <body>
     <h1>Cadastro de Usuários</h1>
-    <form action="processa_usuario.php" method="POST">
+    <form action="nsere_cadastro.php" method="POST">
         <!-- login -->
         <label for="login">Nome:</label>
         <input type="text" name="nome" id="id_nome">
@@ -22,7 +22,8 @@
         <!-- senha -->
         <label for="senha">Senha:</label>
         <input type="password" name="senha" id="id_senha">
-        
+
+        <input type="hidden" name="classificacao" value="usuarios"/>
         <!-- enviar -->
         <input type="submit" value="Cadastrar">
     </form>

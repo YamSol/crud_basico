@@ -164,24 +164,22 @@ $_->execute();
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>id</th>
-                                <th>nome</th>
-                                <th>cpf</th>
-                                <th>data_nasc</th>
-                                <th>endereco</th>
-                                <th>cep</th>
-                                <th>bairro</th>
-                                <th>cidade</th>
-                                <th>uf</th>
-                                <th>senha</th>
-                                <th>email</th>
+                                <th>NOME</th>
+                                <th>CPF</th>
+                                <th>DATA DE NASCIMENTO</th>
+                                <th>ENDEREÇO</th>
+                                <th>CEP</th>
+                                <th>BAIRRO</th>
+                                <th>CIDADE</th>
+                                <th>UF</th>
+                                <th>SENHA</th>
+                                <th>E-MAIL</th>
                             </tr>
                         </thead>
                         <tbody>
 
                             <?php while ($aluno = $_->fetch(PDO::FETCH_ASSOC)) { ?>
                                 <tr>
-                                    <td> <?php echo utf8_encode($aluno['id']); ?> </td>
                                     <td> <?php echo utf8_encode($aluno['nome']); ?> </td>
                                     <td> <?php echo utf8_encode($aluno['cpf']); ?> </td>
                                     <td> <?php echo utf8_encode($aluno['data_nasc']); ?> </td>
@@ -205,9 +203,11 @@ $_->execute();
                                 <tr>
                                     <td><?php echo $aluno['modified']; ?></td>
                                     <td><?php echo $aluno['created']; ?></td>
-                                    <td><button type="button" class="btn btn-warning btn-sm">Editar</button></td>
                                     <td>
-                                        <a class="btn btn-danger btn-sm" style="text-decoration: none; color: white;" href="./excluir_cadastro.php?id_usuario=<?php echo $aluno["id"]; ?>&classificacao=aluno">Excluir</a>
+                                        <a class="btn btn-warning btn-sm" style="text-decoration: none;" href="./editar_aluno.php?id_usuario=<?php echo $aluno["id"]; ?>&classificacao=aluno&file=backend">Editar</a>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-danger btn-sm" style="text-decoration: none; color: white;" href="./excluir_cadastro.php?id_usuario=<?php echo $aluno["id"]; ?>&classificacao=aluno&file=backend">Excluir</a>
                                     </td>
                                 </tr>
 
