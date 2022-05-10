@@ -9,7 +9,7 @@ $senha = $_POST["senha"];
 
 if ($_POST["classificacao"] == "usuarios") {
     //sql statement
-    $sql = "INSERT INTO `usuarios`(`nome`, `cpf`, `senha`, `created`) VALUES(:nome, :cpf, :senha, NOW())";
+    $sql = "INSERT INTO `usuarios`(`nome`, `cpf`, `senha`, `created`, `modified`) VALUES(:nome, :cpf, :senha, NOW(), NOW())";
 
 } elseif ($_POST["classificacao"] == "alunos") {
     //dados exclusivos alunos
@@ -23,8 +23,8 @@ if ($_POST["classificacao"] == "usuarios") {
 
     //sql statement
     $sql = "INSERT INTO `alunos`(`nome`, `cpf`, `senha`, `data_nasc`, `endereco`, `cep`, `bairro`, 
-        `cidade`, `uf`, `created`, `email`) 
-        VALUES(:nome, :cpf, :senha, :data_nasc, :endereco, :cep, :bairro, :cidade, :uf, NOW(), :email)";
+        `cidade`, `uf`, `created`, `modified`, `email`) 
+        VALUES(:nome, :cpf, :senha, :data_nasc, :endereco, :cep, :bairro, :cidade, :uf, NOW(), NOW(), :email)";
 }
 
 

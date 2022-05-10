@@ -36,6 +36,8 @@ $_->execute();
                 <th>NOME</th>
                 <th>CPF</th>
                 <th>SENHA</th>
+                <th>CRIADO</th>
+                <th>EDITADO</th>
                 <th>EDITAR</th>
                 <th>EXCLUIR</th>
             </tr>
@@ -46,6 +48,8 @@ $_->execute();
                     <td><?php echo utf8_encode($usuario['nome']); ?></td>
                     <td><?php echo utf8_encode($usuario['cpf']); ?></td>
                     <td><?php echo utf8_encode($usuario['senha']); ?></td>
+                    <td><?php echo utf8_encode($usuario['created']); ?></td>
+                    <td><?php echo utf8_encode($usuario['modified']); ?></td>
                     <td style="text-align: center; font-size: 18px; background: rgb(200,180,80);"><a href="editar_usuario.php?id_usuario=<?php echo $usuario["id"]; ?>&classificacao=usuario&file=listar">Editar</a></td>
                     <td style="text-align: center; font-size: 18px; background: rgb(200,180,80);"><a href="excluir_cadastro.php?id_usuario=<?php echo $usuario["id"]; ?>&classificacao=usuario&file=listar">Excluir</a></td>
                 </tr>

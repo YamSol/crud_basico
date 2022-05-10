@@ -10,7 +10,7 @@
 
 <body>
     <h1>Cadastro de Usuários</h1>
-    <form action="nsere_cadastro.php" method="POST">
+    <form action="insere_cadastro.php" method="POST">
         <!-- login -->
         <label for="login">Nome:</label>
         <input type="text" name="nome" id="id_nome">
