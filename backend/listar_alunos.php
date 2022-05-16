@@ -66,8 +66,8 @@ $_->execute();
                     <th>EXCLUIR</th>
                 </tr>
                 <tr>
-                    <td><?php echo $aluno['modified']; ?></td>
-                    <td><?php echo $aluno['created']; ?></td>
+                    <td><?php if(isset($usuario['created'])){echo date('d/m/Y H:i:s', strtotime($usuario['created']));} ?></td>
+                    <td><?php if(isset($usuario['modified'])){echo date('d/m/Y H:i:s', strtotime($usuario['modified']));} ?></td>
                     <td style="text-align: center; font-size: 18px; background: rgb(200,180,80);"><a href="editar_aluno.php?id_usuario=<?php echo $aluno["id"]; ?>&classificacao=aluno&file=listar">Editar</a></td>
                     <td style="text-align: center; font-size: 18px; background: rgb(200,180,80);"><a href="excluir_cadastro.php?id_usuario=<?php echo $aluno["id"]; ?>&classificacao=aluno&file=listar">Excluir</a></td>
                 </tr>
