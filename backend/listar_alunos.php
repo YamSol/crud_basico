@@ -44,13 +44,19 @@ $_->execute();
                 <th>senha</th>
                 <th>email</th>
             </tr>
-        <tbody>
+	<tbody>
+	<style>
+	  td {
+	    text-align: center;
+	    font-size: 15pt;
+	  }
+	</style>
             <?php
             while ($aluno = $_->fetch(PDO::FETCH_ASSOC)) { ?>
                 <tr>
                     <td><?php echo utf8_encode($aluno['nome']); ?></td>
                     <td><?php echo utf8_encode($aluno['cpf']); ?></td>
-                    <td><?php echo utf8_encode($aluno['data_nasc']); ?></td>
+                    <td><?php echo date("d/m/Y", strtotime($aluno['data_nasc'])); ?></td>
                     <td><?php echo utf8_encode($aluno['endereco']); ?></td>
                     <td><?php echo utf8_encode($aluno['cep']); ?></td>
                     <td><?php echo utf8_encode($aluno['bairro']); ?></td>
@@ -66,10 +72,10 @@ $_->execute();
                     <th>EXCLUIR</th>
                 </tr>
                 <tr>
-                    <td><?php if(isset($usuario['created'])){echo date('d/m/Y H:i:s', strtotime($usuario['created']));} ?></td>
-                    <td><?php if(isset($usuario['modified'])){echo date('d/m/Y H:i:s', strtotime($usuario['modified']));} ?></td>
-                    <td style="text-align: center; font-size: 18px; background: rgb(200,180,80);"><a href="editar_aluno.php?id_usuario=<?php echo $aluno["id"]; ?>&classificacao=aluno&file=listar">Editar</a></td>
-                    <td style="text-align: center; font-size: 18px; background: rgb(200,180,80);"><a href="excluir_cadastro.php?id_usuario=<?php echo $aluno["id"]; ?>&classificacao=aluno&file=listar">Excluir</a></td>
+                    <td><?php if(isset($aluno['created'])){echo date('d/m/Y H:i:s', strtotime($aluno['created']));} ?></td>
+                    <td><?php if(isset($aluno['modified'])){echo date('d/m/Y H:i:s', strtotime($aluno['modified']));} ?></td>
+                    <td style="background: rgb(200,180,80);"><a href="editar_aluno.php?id_usuario=<?php echo $aluno["id"]; ?>&classificacao=aluno&file=listar">Editar</a></td>
+                    <td style="background: rgb(200,180,80);"><a href="excluir_cadastro.php?id_usuario=<?php echo $aluno["id"]; ?>&classificacao=aluno&file=listar">Excluir</a></td>
                 </tr>
             <?php } ?>
 
