@@ -14,6 +14,7 @@ if (isset($_GET["id_usuario"])) {
     //passa para $id_usuario os usuarios da query
     $id_usuario = $comando->fetch();
 } else {
+    //retorna ao arquivo anterior
     if ($_GET["file"] == "listar") {
         header("Location: listar_usuarios.php");
     } else if ($_GET["file"] == "backend") {
@@ -49,9 +50,9 @@ if (isset($_GET["id_usuario"])) {
                 <label for="senha">Senha:</label>
                 <input type="text" name="senha" value="<?php echo utf8_encode($id_usuario["senha"]); ?>" />
 
-                <input type="hidden" name="id_usuario" value="<?php echo $id_usuario["id"] ?>" />
-                <input type="hidden" name="classificacao" value="<?php echo $_GET["classificacao"] ?>" />
+                <input type="hidden" name="id_usuario" value="<?php echo $_GET["id_usuario"]; ?>" />
                 <input type="hidden" name="file" value="<?php echo $_GET['file']; ?>" />
+                <input type="hidden" name="classificacao" value="<?php echo $_GET["classificacao"]; ?>" />
                 <input type="submit" value="Salvar" />
             </form>
         </div>

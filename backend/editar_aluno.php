@@ -80,7 +80,7 @@ if (isset($_GET["id_usuario"])) {
                 <label for="email">E-mail:</label>
                 <input type="text" name="email" value="<?php echo utf8_encode($id_usuario["email"]); ?>" />
 
-                <input type="hidden" name="id_usuario" value="<?php echo $id_usuario["id"] ?>" />
+                <input type="hidden" name="id_usuario" value="<?php echo $id_usuario["id"]; ?>" />
                 <input type="hidden" name="file" value="<?php echo $_GET['file']; ?>"/>
                 <input type="hidden" name="classificacao" value="<?php echo $_GET['classificacao']; ?>"/>
                 <input type="submit" value="Salvar" />

@@ -38,7 +38,7 @@ if ($_POST["classificacao"] == "aluno") {
     $comando->bindParam(":uf", $uf);
     $comando->bindParam(":email", $email);
 }
-$comando->execute();
+echo($comando->execute());
 
 //retornar à página da listagem
 
