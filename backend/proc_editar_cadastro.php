@@ -19,10 +19,10 @@ if ($_POST["classificacao"] == "aluno") {
     $uf = $_POST["uf"];
     $email = $_POST["email"];
     
-    $sql = "UPDATE usuarios SET `nome`=:nome, `cpf` =:cpf, `senha`=:senha,`data_nasc`=:data_nasc, `endereco`=:endereco, `cep`=:cep,
+    $sql = "UPDATE alunos SET `nome`=:nome, `cpf` =:cpf, `senha`=:senha,`data_nasc`=:data_nasc, `endereco`=:endereco, `cep`=:cep,
  `bairro`=:bairro, `cidade`=:cidade, `uf`=:uf, `email`=:email, `modified`=NOW() WHERE id=:id";
 } elseif ($_POST["classificacao"] == "usuario") {
-    $sql = "UPDATE alunos SET `nome`=:nome, `cpf` =:cpf, `senha`=:senha, `modified`=NOW() WHERE id=:id";
+    $sql = "UPDATE usuarios SET `nome`=:nome, `cpf` =:cpf, `senha`=:senha, `modified`=NOW() WHERE id=:id";
 }
 $comando = $conn->prepare($sql);
 $comando->bindParam(":id", $id_usuario);
