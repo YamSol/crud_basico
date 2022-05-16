@@ -169,6 +169,8 @@ $_->execute();
                                 <th scope="col">Senha</th>
                                 <th scope="col">Editar</th>
                                 <th scope="col">Excluir</th>
+                                <th>EDITAR</th>
+                                <th>EXCLUIR</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -189,6 +191,8 @@ $_->execute();
                                             <a style="text-decoration: none; color: white;" href="./excluir_cadastro.php?id_usuario=<?php echo $usuario["id"]; ?>&classificacao=usuario&file=backend">Excluir</a>
                                         </button>
                                     </td>
+                                    <td><?php echo date('d/m/Y H:i:s', strtotime($usuario['created'])); ?></td>
+                                    <td><?php echo date('d/m/Y H:i:s', strtotime($usuario['modified'])); ?></td>
 
                                 </tr>
                             <?php
