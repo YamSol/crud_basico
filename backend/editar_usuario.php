@@ -16,9 +16,17 @@ if (isset($_GET["id_usuario"])) {
 } else {
     //retorna ao arquivo anterior
     if ($_GET["file"] == "listar") {
-        header("Location: listar_usuarios.php");
+        if($_GET["classificacao"] == "usuario"){
+            header("Location: listar_usuarios.php");
+        }else{
+            header("Location: listar_alunos.php");
+        }
     } else if ($_GET["file"] == "backend") {
-        header("Location: backend_usuarios.php");
+        if($_GET["classificacao"] == "usuario"){
+            header("Location: backend_alunos.php");
+        }else {
+            header("Location: backend_usuarios.php");
+        }
     } else {
         header("Location: ../login.php");
     }
