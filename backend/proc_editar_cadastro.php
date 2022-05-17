@@ -26,17 +26,17 @@ if ($_POST["classificacao"] == "aluno") {
 }
 $comando = $conn->prepare($sql);
 $comando->bindParam(":id", $id_usuario);
-$comando->bindParam(":nome", $nome);
+$comando->bindParam(":nome", utf8_decode($nome));
 $comando->bindParam(":cpf", $cpf);
 $comando->bindParam(":senha", $senha);
 if ($_POST["classificacao"] == "aluno") {
     $comando->bindParam(":data_nasc", $data_nasc);
-    $comando->bindParam(":endereco", $endereco);
+    $comando->bindParam(":endereco", utf8_decode($endereco));
     $comando->bindParam(":cep", $cep);
-    $comando->bindParam(":bairro", $bairro);
-    $comando->bindParam(":cidade", $cidade);
+    $comando->bindParam(":bairro", utf8_decode($bairro));
+    $comando->bindParam(":cidade", utf8_decode($cidade));
     $comando->bindParam(":uf", $uf);
-    $comando->bindParam(":email", $email);
+    $comando->bindParam(":email",utf8_decode($email));
 }
 echo ($comando->execute());
 
