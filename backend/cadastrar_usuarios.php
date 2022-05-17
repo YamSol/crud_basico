@@ -23,7 +23,8 @@
         <label for="senha">Senha:</label>
         <input type="password" name="senha" id="id_senha">
 
-        <input type="hidden" name="classificacao" value="usuarios"/>
+        <input type="hidden" name="classificacao" value="usuario"/>
+        <input type="hidden" name="file" value="<?php echo $_GET["file"] ?>"/>
         <!-- enviar -->
         <input type="submit" value="Cadastrar">
     </form>

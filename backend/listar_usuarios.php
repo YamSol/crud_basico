@@ -29,6 +29,7 @@ $_->execute();
 
 <body>
     <h1>Listar usuarios</h1>
+    <a class="btn btn-success" href="cadastrar_usuarios.php?file=backend">Cadastrar usuarios</a>
     <br><br>
     <table border="3px" width="100%">
         <thead>

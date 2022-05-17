@@ -27,8 +27,8 @@
         <br>
 
         <!-- data nasc -->
-        <label for="nascimento">Data de Nascimento:</label>
-        <input type="date" name="nascimento" id="id_nasc">
+        <label for="data_nasc">Data de Nascimento:</label>
+        <input type="date" name="data_nasc" id="id_nasc">
         <br>
 
         <!-- endereco -->
@@ -61,7 +61,8 @@
         <input type="text" name="email" id="id_email">        
         <br>
 
-        <input type="hidden" name="classificacao" value="alunos"/>
+        <input type="hidden" name="classificacao" value="aluno"/>
+        <input type="hidden" name="file" value="<?php echo $_GET["file"] ?>"/>
         <!-- enviar -->
         <input type="submit" value="Cadastrar">
     </form>

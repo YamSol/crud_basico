@@ -7,13 +7,13 @@ $nome = $_POST["nome"];
 $cpf = $_POST["cpf"];
 $senha = $_POST["senha"];
 
-if ($_POST["classificacao"] == "usuarios") {
+if ($_POST["classificacao"] == "usuario") {
     //sql statement
     $sql = "INSERT INTO `usuarios`(`nome`, `cpf`, `senha`, `created`, `modified`) VALUES(:nome, :cpf, :senha, NOW(), NOW())";
 
-} elseif ($_POST["classificacao"] == "alunos") {
+} elseif ($_POST["classificacao"] == "aluno") {
     //dados exclusivos alunos
-    $nascimento = $_POST["nascimento"];
+    $data_nasc = $_POST["data_nasc"];
     $endereco = $_POST["endereco"];
     $cep = $_POST["cep"];
     $bairro = $_POST["bairro"];
@@ -33,7 +33,7 @@ $_->bindParam(":nome", $nome);
 $_->bindParam(":cpf", $cpf);
 $_->bindParam(":senha", $senha);
 //bind param for 'alunos'
-if ($_POST["classificacao"] == "alunos") {
+if ($_POST["classificacao"] == "aluno") {
     $_->bindParam(":data_nasc", $data_nasc);
     $_->bindParam(":endereco", $endereco);
     $_->bindParam(":cep", $cep);
@@ -45,4 +45,18 @@ if ($_POST["classificacao"] == "alunos") {
 $_->execute();
 
 //retornar a pagina de listagem
-header("Location: listar_usuarios.php");
+if ($_POST["file"] == "listar") {
+    if ($_POST["classificacao"] == "usuario") {
+        header("Location: listar_usuarios.php");
+    } else {
+        header("Location: listar_alunos.php");
+    }
+} else if ($_POST["file"] == "backend") {
+    if ($_POST["classificacao"] == "usuario") {
+        header("Location: backend_usuarios.php");
+    } else {
+        header("Location: backend_alunos.php");
+    }
+} else {
+    header("Location: ../login.php");
+}

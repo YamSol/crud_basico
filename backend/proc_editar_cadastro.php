@@ -18,7 +18,7 @@ if ($_POST["classificacao"] == "aluno") {
     $cidade = $_POST["cidade"];
     $uf = $_POST["uf"];
     $email = $_POST["email"];
-    
+
     $sql = "UPDATE alunos SET `nome`=:nome, `cpf` =:cpf, `senha`=:senha,`data_nasc`=:data_nasc, `endereco`=:endereco, `cep`=:cep,
  `bairro`=:bairro, `cidade`=:cidade, `uf`=:uf, `email`=:email, `modified`=NOW() WHERE id=:id";
 } elseif ($_POST["classificacao"] == "usuario") {
@@ -38,21 +38,21 @@ if ($_POST["classificacao"] == "aluno") {
     $comando->bindParam(":uf", $uf);
     $comando->bindParam(":email", $email);
 }
-echo($comando->execute());
+echo ($comando->execute());
 
 //retornar à página da listagem
 
 if ($_POST["file"] == "listar") {
-    if($_POST["classificacao"] == "usuario"){
+    if ($_POST["classificacao"] == "usuario") {
         header("Location: listar_usuarios.php");
-    }else{
+    } else {
         header("Location: listar_alunos.php");
     }
 } else if ($_POST["file"] == "backend") {
-    if($_POST["classificacao"] == "usuario"){
-    header("Location: backend_usuarios.php");
-}else{
-    header("Location: backend_alunos.php");
+    if ($_POST["classificacao"] == "usuario") {
+        header("Location: backend_usuarios.php");
+    } else {
+        header("Location: backend_alunos.php");
     }
 } else {
     header("Location: ../login.php");

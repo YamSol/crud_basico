@@ -29,6 +29,7 @@ $_->execute();
 
 <body>
     <h1>Listar alunos</h1>
+    <a href="cadastrar_alunos.php?file=listar" class="btn btn-success">Cadastrar alunos</a>
     <br><br>
     <table border="3px" width="100%">
         <thead>
