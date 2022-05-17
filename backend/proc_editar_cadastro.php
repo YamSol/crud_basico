@@ -31,12 +31,12 @@ $comando->bindParam(":cpf", $cpf);
 $comando->bindParam(":senha", $senha);
 if ($_POST["classificacao"] == "aluno") {
     $comando->bindParam(":data_nasc", $data_nasc);
-    $comando->bindParam(":endereco", utf8_decode($endereco));
+    $comando->bindParam(":endereco", $endereco);
     $comando->bindParam(":cep", $cep);
     $comando->bindParam(":bairro", utf8_decode($bairro));
     $comando->bindParam(":cidade", utf8_decode($cidade));
     $comando->bindParam(":uf", $uf);
-    $comando->bindParam(":email",utf8_decode($email));
+    $comando->bindParam(":email", $email);
 }
 echo ($comando->execute());
 
