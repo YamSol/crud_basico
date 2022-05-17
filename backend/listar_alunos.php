@@ -72,8 +72,8 @@ $_->execute();
                     <th>EXCLUIR</th>
                 </tr>
                 <tr>
-                    <td><?php if(isset($aluno['created'])){echo date('d/m/Y H:i:s', strtotime($aluno['created']));} ?></td>
                     <td><?php if(isset($aluno['modified'])){echo date('d/m/Y H:i:s', strtotime($aluno['modified']));} ?></td>
+                    <td><?php if(isset($aluno['created'])){echo date('d/m/Y H:i:s', strtotime($aluno['created']));} ?></td>
                     <td style="background: rgb(200,180,80);"><a href="editar_aluno.php?id_usuario=<?php echo $aluno["id"]; ?>&classificacao=aluno&file=listar">Editar</a></td>
                     <td style="background: rgb(200,180,80);"><a href="excluir_cadastro.php?id_usuario=<?php echo $aluno["id"]; ?>&classificacao=aluno&file=listar">Excluir</a></td>
                 </tr>

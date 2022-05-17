@@ -43,9 +43,17 @@ echo($comando->execute());
 //retornar à página da listagem
 
 if ($_POST["file"] == "listar") {
-    header("Location: listar_usuarios.php");
+    if($_POST["classificacao"] == "usuario"){
+        header("Location: listar_usuarios.php");
+    }else{
+        header("Location: listar_alunos.php");
+    }
 } else if ($_POST["file"] == "backend") {
+    if($_POST["classificacao"] == "usuario"){
     header("Location: backend_usuarios.php");
+}else{
+    header("Location: backend_alunos.php");
+    }
 } else {
     header("Location: ../login.php");
 }
