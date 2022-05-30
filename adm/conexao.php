@@ -6,6 +6,6 @@ try {
 } catch (PDOEXception $e) {
     $console = 'Falha na conexão' . $e->getMessage();
 }
-
-//log
-echo "<script>console.log('conexao.php: " . $console . "' );</script>";
+?>
+<!-- Mensagem Conexao -->
+<script> console.log("conexao.php: <?php echo $console; ?>");</script>

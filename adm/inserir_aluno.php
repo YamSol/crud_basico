@@ -29,6 +29,6 @@ $_->bindValue(":uf", $uf);
 $_->bindValue(":email", $email);
 $_->execute();
 
-header("Location: ../../index.php");
+header("Location: ../");
 
 ?>

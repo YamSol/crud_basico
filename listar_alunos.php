@@ -1,5 +1,5 @@
 <?php
-include_once "adm/conexao.php";
+require_once "adm/conexao.php";
 
 $sql = "SELECT * FROM alunos";
 $_ = $conn->prepare($sql);
